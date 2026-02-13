@@ -21,7 +21,7 @@ prepare_sequence_data <- function(x, cols) {
 
 #' Get specific columns from data
 #'
-#' @param expr An `expression` for the columns to select.
+#' @param expr An `quosure` for the columns to select.
 #' @param data A `data.frame` to select the columns from.
 #' @noRd
 get_cols <- function(expr, data) {

@@ -1,10 +1,10 @@
-#' DynaNetwork R6 Class
+#' DynaModel R6 Class
 #'
 #' @export
-DynaNetwork <- R6::R6Class(
-  classname = "DynaNetwork",
+DynaModel <- R6::R6Class(
+  classname = "DynaModel",
   public = list(
-    #' @description Create a new DynaNetwork object.
+    #' @description Create a new DynaModel object.
     #' @param data The input `data` for the model.
     initialize = function(data) {
       private$data_raw <- data
@@ -19,7 +19,6 @@ DynaNetwork <- R6::R6Class(
     },
     #' @description Set the `parser` field.
     #' @param fun A `function`.
-    #' @param cols TODO
     set_parser = function(fun) {
       f <- fun()
       environment(f) <- environment()
@@ -41,34 +40,18 @@ DynaNetwork <- R6::R6Class(
     parse = function() {
       private$parser()
     },
-    #' @description Estimate the network model.
+    #' @description Estimate the model.
     estimate = function() {
       private$estimator()
-    },
-    #' @description Get estimated weights
-    get_weights = function() {
-      private$weights
     }
   ),
   private = list(
-    nodes = NULL,
-    edges = NULL,
-    weights = NULL,
     data = NULL,
     data_est = NULL,
     data_raw = NULL,
     reader = NULL,
     parser = NULL,
-    estimator = NULL
-  ),
-  active = list(
-    #' @field n_nodes Number of nodes in the network.
-    n_nodes = function() {
-      nrow(private$nodes) %||% 0L
-    },
-    #' @field n_edges Number of edges in the network.
-    n_edges = function() {
-      nrow(private$edges) %||% 0L
-    }
+    estimator = NULL,
+    estimated = NULL
   )
 )

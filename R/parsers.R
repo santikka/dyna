@@ -1,4 +1,4 @@
-parser_funfact_transitions <- function() {
+parser_funfact_sequences_transitions <- function() {
   function() {
     sequences <- private$data$sequences
     alphabet <- private$data$alphabet
@@ -24,7 +24,7 @@ parser_funfact_transitions <- function() {
   }
 }
 
-parser_funfact_cooccurrence <- function() {
+parser_funfact_sequences_cooccurrence <- function() {
   function() {
     sequences <- private$data$sequences
     alphabet <- private$data$alphabet
@@ -50,3 +50,5 @@ parser_funfact_cooccurrence <- function() {
     private$data_est <- co
   }
 }
+
+# TODO onehot variants

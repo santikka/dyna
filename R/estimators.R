@@ -11,6 +11,6 @@ estimator_funfact_weight_matrix <- function(params) {
     if (!keep_data) {
       private$data_est <- NULL
     }
-    private$weights <- weights
+    private$estimated <- weights
   }
 }

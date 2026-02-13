@@ -4,14 +4,24 @@
 \alias{estimate_model}
 \title{Estimate a Network Model}
 \usage{
-estimate_model(data, cols, type = "transition_network")
+estimate_model(
+  data,
+  format = "sequences",
+  type = "tna",
+  cols = tidyselect::everything(),
+  scaling = character(0L)
+)
 }
 \arguments{
 \item{data}{TODO}
 
-\item{cols}{TODO}
+\item{format}{TODO}
 
 \item{type}{TODO}
+
+\item{cols}{TODO}
+
+\item{scaling}{TODO}
 }
 \value{
 TODO
